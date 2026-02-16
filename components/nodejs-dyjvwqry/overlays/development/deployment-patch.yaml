@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: nodejs-dyjvwqry
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/rhtap-task-runner:latest
-        name: container-image  
+        - image: artifactory-docker-artifactory.apps.rosa.rhtap-services.xmdt.p3.openshiftapps.com/rhtap/nodejs-dyjvwqry:c781a8bfee5676c616659642cc546d07aac3c174@sha256:016f0aabf52513e15916097f4fc5e7a39e6543c108d06f5383ce6515dd4e94e6
+          name: container-image
